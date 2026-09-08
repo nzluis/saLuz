@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'core/di/injection.dart';
+import 'core/router/app_router.dart';
 
 void main() {
   configureDependencies();
@@ -13,7 +15,7 @@ class SaluzApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'saLuz',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -23,17 +25,9 @@ class SaluzApp extends ConsumerWidget {
         ),
         useMaterial3: true,
       ),
-      home: const Scaffold(
-        body: Center(
-          child: Text(
-            'saLuz',
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF1B5E20),
-            ),
-          ),
-        ),
+      routerConfig: GoRouter(
+        routes: $appRoutes,
+        initialLocation: '/',
       ),
     );
   }
