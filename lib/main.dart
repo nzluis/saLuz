@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'core/di/injection.dart';
 
 void main() {
   configureDependencies();
-  runApp(const SaluzApp());
+  runApp(const ProviderScope(child: SaluzApp()));
 }
 
-class SaluzApp extends StatelessWidget {
+class SaluzApp extends ConsumerWidget {
   const SaluzApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       title: 'saLuz',
       debugShowCheckedModeBanner: false,
