@@ -1,0 +1,42 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+  errors:
+    dead_code: error
+    unused_import: error
+    unused_local_variable: error
+    avoid_unnecessary_containers: error
+
+linter:
+  rules:
+    # Immutability & correctness
+    - prefer_final_fields
+    - prefer_final_locals
+    - prefer_const_constructors
+    - prefer_const_declarations
+    - avoid_mutable_fields_in_final_classes
+
+    # Type safety
+    - avoid_dynamic_calls
+    - always_declare_return_types
+    - type_annotate_public_apis
+
+    # Async hygiene
+    - discarded_futures
+    - unawaited_futures
+
+    # Style
+    - prefer_single_quotes
+    - sort_pub_dependencies
+    - directives_ordering
