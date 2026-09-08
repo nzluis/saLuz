@@ -25,7 +25,6 @@ linter:
     - prefer_final_locals
     - prefer_const_constructors
     - prefer_const_declarations
-    - avoid_mutable_fields_in_final_classes
 
     # Type safety
     - avoid_dynamic_calls
