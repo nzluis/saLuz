@@ -14,6 +14,8 @@
 build/
 .pub-cache/
 .pub/
+.metadata
+flutter_*.png
 
 # Android
 **/android/**/gradle-wrapper.jar
