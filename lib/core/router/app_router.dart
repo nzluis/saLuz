@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../design_system/design_system.dart';
+
 part 'app_router.g.dart';
 
 @TypedGoRoute<HomeRoute>(
@@ -43,26 +45,31 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
-      appBar: AppBar(title: const Text('saLuz')),
+      appBar: AppBar(
+        title: const Text('saLuz'),
+        backgroundColor: theme.colorScheme.primary,
+        foregroundColor: theme.colorScheme.onPrimary,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               'saLuz',
-              style: TextStyle(
-                fontSize: 32,
+              style: theme.textTheme.displaySmall?.copyWith(
+                color: theme.colorScheme.primary,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF1B5E20),
               ),
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: AppSpacing.xxl),
             FilledButton.tonal(
               onPressed: () => const ContentRoute().go(context),
               child: const Text('Contenido Educativo'),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppSpacing.lg),
             FilledButton.tonal(
               onPressed: () => const ConsultationRoute().go(context),
               child: const Text('Consulta Médica'),

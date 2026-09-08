@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'core/di/injection.dart';
 import 'core/router/app_router.dart';
+import 'design_system/design_system.dart';
 
 void main() {
   configureDependencies();
@@ -18,13 +19,7 @@ class SaluzApp extends ConsumerWidget {
     return MaterialApp.router(
       title: 'saLuz',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF1B5E20),
-          brightness: Brightness.light,
-        ),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.light,
       routerConfig: GoRouter(
         routes: $appRoutes,
         initialLocation: '/',
