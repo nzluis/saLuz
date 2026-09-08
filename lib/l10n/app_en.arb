@@ -1,0 +1,17 @@
+{
+  "@@locale": "en",
+  "appTitle": "saLuz",
+  "homeTitle": "saLuz",
+  "educationalContent": "Educational Content",
+  "medicalConsultation": "Medical Consultation",
+  "@educationalContent": {
+    "description": "Button label for the educational content section"
+  },
+  "@medicalConsultation": {
+    "description": "Button label for the medical consultation section"
+  },
+  "contentScreenTitle": "Content",
+  "contentScreenBody": "Educational Content",
+  "consultationScreenTitle": "Consultation",
+  "consultationScreenBody": "Medical Consultation"
+}

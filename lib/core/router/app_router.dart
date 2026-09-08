@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../design_system/design_system.dart';
+import '../../l10n/app_localizations.dart';
 
 part 'app_router.g.dart';
 
@@ -46,10 +47,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('saLuz'),
+        title: Text(l10n.appTitle),
         backgroundColor: theme.colorScheme.primary,
         foregroundColor: theme.colorScheme.onPrimary,
       ),
@@ -58,7 +60,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'saLuz',
+              l10n.homeTitle,
               style: theme.textTheme.displaySmall?.copyWith(
                 color: theme.colorScheme.primary,
                 fontWeight: FontWeight.bold,
@@ -67,12 +69,12 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: AppSpacing.xxl),
             FilledButton.tonal(
               onPressed: () => const ContentRoute().go(context),
-              child: const Text('Contenido Educativo'),
+              child: Text(l10n.educationalContent),
             ),
             const SizedBox(height: AppSpacing.lg),
             FilledButton.tonal(
               onPressed: () => const ConsultationRoute().go(context),
-              child: const Text('Consulta Médica'),
+              child: Text(l10n.medicalConsultation),
             ),
           ],
         ),
@@ -86,10 +88,12 @@ class ContentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Contenido')),
-      body: const Center(
-        child: Text('Contenido Educativo'),
+      appBar: AppBar(title: Text(l10n.contentScreenTitle)),
+      body: Center(
+        child: Text(l10n.contentScreenBody),
       ),
     );
   }
@@ -100,10 +104,12 @@ class ConsultationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Consulta')),
-      body: const Center(
-        child: Text('Consulta Médica'),
+      appBar: AppBar(title: Text(l10n.consultationScreenTitle)),
+      body: Center(
+        child: Text(l10n.consultationScreenBody),
       ),
     );
   }
